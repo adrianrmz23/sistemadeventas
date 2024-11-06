@@ -13,10 +13,30 @@
   <link rel="stylesheet" href="../public/templates/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../public/templates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+  <!-- Sweet Alert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="stylesheet" href="../public/css/stylenot.css"></link>
+  <script src="../public/js/index.var.js"></script>
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
+
+<?php
+session_start();
+if(isset($_SESSION['mensaje'])){
+  $respuesta = $_SESSION['mensaje']; ?>
+
+  <script>
+    new AWN().alert('Acceso incorrecto, revisa los datos de acceso.', {durations: {alert: 2000}});
+  </script>
+
+<?php  
+}
+?>
+
 <div class="container">
     <img src="../public/images/logo.png" class="mx-auto d-block" width="150px">
 </div>

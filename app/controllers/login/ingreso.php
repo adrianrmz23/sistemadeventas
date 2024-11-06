@@ -19,7 +19,13 @@ foreach($usuarios as $usuario){
 }
 
 if($contador == 0){
-    echo "Datos incorrectos, vuelva a intentarlo.";
+    //echo "Datos incorrectos, vuelva a intentarlo.";
+    session_start();
+    $_SESSION['mensaje'] = "Error datos incorrectos";
+    header('Location: '.$URL.'/login');
 }else{
-    echo "Datos correctos.";
+    //echo "Datos correctos.";
+    session_start();
+    $_SESSION['sesion_email'] = $email;
+    header('Location: '. $URL .'index.php');
 }
